@@ -7,7 +7,7 @@ RUN pacman -Sy --noconfirm
 RUN pacman -S git base-devel --noconfirm --needed
 
 # Create build user
-RUN useradd -m builduser 
+RUN useradd -m builduser
 RUN echo "builduser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/notroot
 
 USER builduser
@@ -18,3 +18,6 @@ RUN git clone https://aur.archlinux.org/trizen-git.git && cd trizen-git && makep
 
 # Install vcpkg
 RUN trizen -S vcpkg-git --noconfirm
+
+# Install zsh and oh-my-zsh
+RUN pacman -S zsh && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) -y "
