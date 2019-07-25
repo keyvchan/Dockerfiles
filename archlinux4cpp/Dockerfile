@@ -22,4 +22,4 @@ RUN trizen -S vcpkg-git --noconfirm
 USER root
 WORKDIR /root/
 # Install zsh and oh-my-zsh
-RUN pacman -S zsh && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) -y "
+RUN pacman -S zsh --noconfirm --needed && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) -y "
