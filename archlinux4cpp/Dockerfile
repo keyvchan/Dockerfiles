@@ -19,5 +19,7 @@ RUN git clone https://aur.archlinux.org/trizen-git.git && cd trizen-git && makep
 # Install vcpkg
 RUN trizen -S vcpkg-git --noconfirm
 
+USER root
+WORKDIR /root/
 # Install zsh and oh-my-zsh
 RUN pacman -S zsh && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) -y "
