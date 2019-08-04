@@ -4,7 +4,7 @@ FROM archlinux/base:latest
 
 # Update package info
 RUN pacman -Sy --noconfirm
-RUN pacman -S git base-devel --noconfirm --needed
+RUN pacman -S git base-devel cmake gdb --noconfirm --needed 
 
 # Create build user
 RUN useradd -m builduser
@@ -23,3 +23,6 @@ USER root
 WORKDIR /root/
 # Install zsh and oh-my-zsh
 RUN pacman -S zsh --noconfirm --needed && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) -y "
+
+
+
