@@ -24,7 +24,7 @@ WORKDIR /root/
 # Install zsh and oh-my-zsh
 RUN pacman -S zsh --noconfirm --needed && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh) -y "
 
-# Fix clang-format crash bug (May be fix in newer version)
+# Fix clang-format crash bug (May be fixed in newer version)
 RUN ln -sf /usr/lib/libncursesw.so.6 /usr/lib/libtinfo.so.5
 
 # Change shell to zsh
